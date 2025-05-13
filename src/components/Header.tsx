@@ -14,7 +14,7 @@ export const Header = () => {
   const handleCalculatorClick = (e: React.MouseEvent) => {
     e.preventDefault();
     setShowCalculator(true);
-    // We don't close the menu automatically to avoid the disappearing issue
+    setIsMenuOpen(false); // Fechar o menu ao abrir a calculadora
   };
 
   const closeCalculator = () => {
