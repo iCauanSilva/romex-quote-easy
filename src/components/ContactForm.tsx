@@ -29,7 +29,14 @@ export function ContactForm() {
   });
   
   const isValid = form.formState.isValid;
-  const formData: FormData = form.getValues();
+  
+  // Initialize formData with the required properties
+  const formData: FormData = {
+    name: form.watch("name") || "",
+    email: form.watch("email") || "",
+    phone: form.watch("phone") || "",
+    message: form.watch("message") || "",
+  };
 
   return (
     <div className="w-full max-w-md mx-auto p-6 bg-white rounded-lg shadow-md">
