@@ -1,6 +1,7 @@
 
 import { ContactForm } from "./components/ContactForm";
 import { Toaster } from "sonner";
+import { Header } from "./components/Header";
 
 function App() {
   // Disable right-click functionality
@@ -10,6 +11,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-50" onContextMenu={handleContextMenu}>
+      <Header />
       <main className="container mx-auto py-10 px-4">
         <ContactForm />
       </main>
