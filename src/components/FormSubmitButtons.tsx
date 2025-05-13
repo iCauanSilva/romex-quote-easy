@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { Mail, Send, WhatsApp } from "lucide-react";
+import { Mail, MessageSquare } from "lucide-react";
 import { FormData, sendViaEmail, sendViaWhatsApp } from "@/utils/formSubmission";
 import { toast } from "sonner";
 
@@ -46,7 +46,7 @@ export function FormSubmitButtons({ formData, isValid }: FormSubmitButtonsProps)
         onClick={handleWhatsAppSubmit}
         className="flex-1 bg-green-600 hover:bg-green-700 text-white"
       >
-        <WhatsApp className="mr-2 h-4 w-4" />
+        <MessageSquare className="mr-2 h-4 w-4" />
         Enviar por WhatsApp
       </Button>
     </div>
