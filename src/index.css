@@ -1,0 +1,54 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --roma-500: #FF6B35;
+  --roma-600: #E85A24;
+  --roma-700: #D14913;
+  --roma-800: #B33A08;
+}
+
+@layer base {
+  body {
+    @apply text-gray-900 bg-gray-50;
+  }
+}
+
+@layer components {
+  .bg-roma-500 {
+    background-color: var(--roma-500);
+  }
+  
+  .bg-roma-600 {
+    background-color: var(--roma-600);
+  }
+  
+  .bg-roma-700 {
+    background-color: var(--roma-700);
+  }
+  
+  .text-roma-700 {
+    color: var(--roma-700);
+  }
+  
+  .text-roma-800 {
+    color: var(--roma-800);
+  }
+}
+
+.animate-fade-down {
+  animation: fadeDown 0.2s ease-out forwards;
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,34 +1,21 @@
 
 export interface FormData {
-  name?: string;
-  email?: string;
-  phone?: string;
-  message?: string;
-  [key: string]: any; // For any additional form fields
+  name: string;
+  email: string;
+  phone: string;
+  message: string;
 }
 
-export const sendViaWhatsApp = (formData: FormData): void => {
-  const text = encodeURIComponent(
-    `Nome: ${formData.name || ''}\n` +
-    `Email: ${formData.email || ''}\n` +
-    `Telefone: ${formData.phone || ''}\n` +
-    `Mensagem: ${formData.message || ''}\n`
-  );
-  
-  // WhatsApp API URL
-  const whatsappUrl = `https://wa.me/?text=${text}`;
-  window.open(whatsappUrl, '_blank');
+export const sendViaWhatsApp = (formData: FormData) => {
+  const { name, email, phone, message } = formData;
+  const text = `Nome: ${name}%0AEmail: ${email}%0ATelefone: ${phone}%0AMensagem: ${message}`;
+  const whatsappNumber = "5511999999999"; // Substitua pelo número correto
+  window.open(`https://wa.me/${whatsappNumber}?text=${text}`, "_blank");
 };
 
-export const sendViaEmail = (formData: FormData): void => {
-  const subject = encodeURIComponent("Nova cotação do site");
-  const body = encodeURIComponent(
-    `Nome: ${formData.name || ''}\n` +
-    `Email: ${formData.email || ''}\n` +
-    `Telefone: ${formData.phone || ''}\n` +
-    `Mensagem: ${formData.message || ''}\n`
-  );
-  
-  // Standard mailto link
-  window.location.href = `mailto:cotacaosp@romaexpress.com.br?subject=${subject}&body=${body}`;
+export const sendViaEmail = (formData: FormData) => {
+  const { name, email, phone, message } = formData;
+  const subject = `Contato de ${name}`;
+  const body = `Nome: ${name}%0D%0AEmail: ${email}%0D%0ATelefone: ${phone}%0D%0AMensagem: ${message}`;
+  window.location.href = `mailto:contato@romaexpress.com.br?subject=${subject}&body=${body}`;
 };
