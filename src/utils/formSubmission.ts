@@ -4,13 +4,21 @@ export interface FormData {
   email: string;
   phone: string;
   message: string;
+  cnpj?: string;
+  companyName?: string;
 }
 
 export const sendViaWhatsApp = (formData: FormData) => {
-  const { name, email, phone, message } = formData;
+  const { name, email, phone, message, cnpj, companyName } = formData;
   
   // Formata a mensagem para o WhatsApp
-  const text = `Nome: ${name}%0AEmail: ${email}%0ATelefone: ${phone}%0AMensagem: ${message}`;
+  let text = `Nome: ${name}%0AEmail: ${email}%0ATelefone: ${phone}`;
+  
+  if (cnpj && companyName) {
+    text += `%0ACNPJ: ${cnpj}%0AEmpresa: ${companyName}`;
+  }
+  
+  text += `%0AMensagem: ${message}`;
   
   // Número de WhatsApp para onde a mensagem será enviada (adicione seu número aqui)
   const whatsappNumber = "5511999999999"; // Substitua pelo número correto
@@ -23,11 +31,17 @@ export const sendViaWhatsApp = (formData: FormData) => {
 };
 
 export const sendViaEmail = (formData: FormData) => {
-  const { name, email, phone, message } = formData;
+  const { name, email, phone, message, cnpj, companyName } = formData;
   
   // Formata o assunto e o corpo do email
   const subject = `Solicitação de Cotação - ${name}`;
-  const body = `Nome: ${name}%0AEmail: ${email}%0ATelefone: ${phone}%0AMensagem: ${message}`;
+  let body = `Nome: ${name}%0AEmail: ${email}%0ATelefone: ${phone}`;
+  
+  if (cnpj && companyName) {
+    body += `%0ACNPJ: ${cnpj}%0AEmpresa: ${companyName}`;
+  }
+  
+  body += `%0AMensagem: ${message}`;
   
   // Email para onde a mensagem será enviada (adicione seu email aqui)
   const toEmail = "contato@romaexpress.com.br"; // Substitua pelo email correto
