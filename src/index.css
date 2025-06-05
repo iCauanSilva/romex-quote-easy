@@ -4,6 +4,7 @@
 @tailwind utilities;
 
 :root {
+  --roma-100: #FFF1F0;
   --roma-500: #FF6B35;
   --roma-600: #E85A24;
   --roma-700: #D14913;
@@ -17,6 +18,10 @@
 }
 
 @layer components {
+  .bg-roma-100 {
+    background-color: var(--roma-100);
+  }
+  
   .bg-roma-500 {
     background-color: var(--roma-500);
   }
@@ -27,6 +32,10 @@
   
   .bg-roma-700 {
     background-color: var(--roma-700);
+  }
+  
+  .bg-roma-800 {
+    background-color: var(--roma-800);
   }
   
   .text-roma-700 {

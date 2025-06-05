@@ -1,7 +1,12 @@
 
-import { ContactForm } from "./components/ContactForm";
 import { Toaster } from "sonner";
 import { Header } from "./components/Header";
+import { HeroSection } from "./components/HeroSection";
+import { AboutSection } from "./components/AboutSection";
+import { ServicesSection } from "./components/ServicesSection";
+import { GallerySection } from "./components/GallerySection";
+import { ContactSection } from "./components/ContactSection";
+import { Footer } from "./components/Footer";
 
 function App() {
   // Disable right-click functionality
@@ -10,11 +15,14 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50" onContextMenu={handleContextMenu}>
+    <div className="min-h-screen" onContextMenu={handleContextMenu}>
       <Header />
-      <main className="container mx-auto py-10 px-4">
-        <ContactForm />
-      </main>
+      <HeroSection />
+      <AboutSection />
+      <ServicesSection />
+      <GallerySection />
+      <ContactSection />
+      <Footer />
       <Toaster position="top-center" />
     </div>
   );
