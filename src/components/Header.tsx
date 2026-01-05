@@ -41,6 +41,14 @@ export const Header = () => {
             <ul className="space-y-2">
               <li>
                 <a 
+                  href="/rastreamento" 
+                  className="block p-2 hover:bg-gray-100 rounded-md text-roma-800"
+                >
+                  Rastreamento
+                </a>
+              </li>
+              <li>
+                <a 
                   href="#" 
                   className="block p-2 hover:bg-gray-100 rounded-md text-roma-800"
                   onClick={handleCalculatorClick}
@@ -49,7 +57,7 @@ export const Header = () => {
                 </a>
               </li>
               <li>
-                <a href="#" className="block p-2 hover:bg-gray-100 rounded-md text-roma-800">
+                <a href="#contato" className="block p-2 hover:bg-gray-100 rounded-md text-roma-800">
                   Contato
                 </a>
               </li>

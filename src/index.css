@@ -1,10 +1,11 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
+  --roma-50: #FFF8F6;
   --roma-100: #FFF1F0;
+  --roma-200: #FFE0DB;
   --roma-500: #FF6B35;
   --roma-600: #E85A24;
   --roma-700: #D14913;
@@ -18,6 +19,10 @@
 }
 
 @layer components {
+  .bg-roma-50 {
+    background-color: var(--roma-50);
+  }
+  
   .bg-roma-100 {
     background-color: var(--roma-100);
   }
@@ -38,12 +43,36 @@
     background-color: var(--roma-800);
   }
   
+  .text-roma-100 {
+    color: var(--roma-100);
+  }
+  
+  .text-roma-200 {
+    color: var(--roma-200);
+  }
+  
+  .text-roma-500 {
+    color: var(--roma-500);
+  }
+  
+  .text-roma-600 {
+    color: var(--roma-600);
+  }
+  
   .text-roma-700 {
     color: var(--roma-700);
   }
   
   .text-roma-800 {
     color: var(--roma-800);
+  }
+  
+  .hover\:bg-roma-600:hover {
+    background-color: var(--roma-600);
+  }
+  
+  .hover\:text-roma-700:hover {
+    color: var(--roma-700);
   }
 }
 
